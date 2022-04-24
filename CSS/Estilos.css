@@ -1,0 +1,1046 @@
+@font-face 
+{
+    font-family: "Courgette";
+    src: url(../LIBRERIAS/Fuentes/Courgette/Courgette.ttf), url(../LIBRERIAS/Fuentes/Courgette/Courgette.otf), url(../LIBRERIAS/Fuentes/Courgette/Courgette.eot);
+}
+
+@font-face
+{
+    font-family: "BreeSerif";
+    src: url(../LIBRERIAS/Fuentes/BreeSerif/BreeSerif.ttf), url(../LIBRERIAS/Fuentes/BreeSerif/BreeSerif.otf), url(../LIBRERIAS/Fuentes/BreeSerif/BreeSerif.eot);
+}
+
+
+/*VARIABLES CSS*/
+:root
+{
+    --colorPrimario: #E6A402;
+    --colorSecundario: #E92F3D;
+    --colorBackground: #D6D6D6;
+    --colorTexto: #636e72;
+    --colorSombraBoton: #E92F3D30;
+    --tipoDeFuente: "Courgette";
+}
+
+
+
+
+/*ESTILOS GENERALES*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*font-family: var(--tipoDeFuente);*/
+}
+
+html
+{
+    scroll-behavior: smooth;
+}
+
+body
+{
+    background: var(--colorBackground);
+    font-family: var(--tipoDeFuente);
+}
+
+.titulos
+{
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.subtitulos
+{
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--colorPrimario);
+}
+
+.btn
+{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: white;
+    background: var(--colorPrimario);
+    font-weight: 700;
+    padding: 15px 30px;
+    outline: none;
+    border: 2px solid var(--colorPrimario);
+    cursor: pointer;
+    position: relative;
+    top: 20px;
+    transition: all 0.3s;
+    font-family: "BreeSerif";
+    letter-spacing: 1px;
+}
+
+.btn span
+{
+    padding-left: 10px;
+}
+
+.btn:hover
+{
+    padding: 15px 40px;
+}
+
+
+
+
+/*MENU PRINCIPAL*/
+.menuPrincipal
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    padding: 0 30px;
+    margin-top: 10px;
+    background: var(--colorBackground);
+    z-index: 1;
+}
+
+.logo img
+{
+    width: 130px;
+    cursor: pointer;
+    padding-top: 20px;
+}
+
+.barraMenu
+{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.barraMenu .enlaces ul li
+{
+    display: inline-block;
+    padding: 0 10px;
+    font-family: "BreeSerif";
+    letter-spacing: 1px;
+}
+
+.barraMenu .enlaces ul li a
+{
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--colorTexto);
+    font-weight: 800;
+    background: linear-gradient(currentColor, currentColor);
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: all 0.5s;
+}
+
+.barraMenu .enlaces ul li a:hover
+{
+    color: var(--colorSecundario);
+    background-size: 50% 2px;
+}
+
+.barraMenu .redesSociales a
+{
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 0 10px;
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--colorTexto);
+    transition: all 0.5s;
+}
+
+.barraMenu .redesSociales a:hover
+{
+    color: var(--colorSecundario);
+}
+
+.menuPrincipal i
+{
+    cursor: pointer;
+    color: var(--colorTexto);
+    font-size: 30px;
+    float: right;
+    display: none;
+    transition: all 0.5s;
+}
+
+.menuPrincipal i:hover
+{
+    color: var(--colorSecundario);
+}
+
+
+
+
+/*SLIDER DE PRODUCTOS*/
+#menuProductos .contenedorPrincipal
+{
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+}
+
+.contenedorPrincipal #btnIzquierda,
+.contenedorPrincipal #btnDerecha
+{
+    position: absolute;
+    height: 10%;
+    width: 50px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 40px;
+    margin: 0 15px;
+    color: var(--colorSecundario);
+    z-index: 500;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.contenedorPrincipal #btnIzquierda:hover,
+.contenedorPrincipal #btnDerecha:hover
+{
+    background: var(--colorSombraBoton);
+    transform: translateY(5px);
+}
+
+.contenedorPrincipal #btnIzquierda
+{
+    left: 0;
+}
+
+.contenedorPrincipal #btnDerecha
+{
+    right: 0;
+}
+
+.slider
+{
+    display: flex;
+    overflow: hidden;
+    height: calc(100vh - 80px);
+    scroll-behavior: smooth;
+}
+
+.contenedorProductos
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 100%;
+    flex-shrink: 0;
+}
+
+.descripcionProductos
+{
+    width: 30%;
+}
+
+.descripcionProductos h1
+{
+    font-size: 5vw;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.descripcionProductos h2
+{
+    text-transform: lowercase;
+    font-size: 2.2vw;
+    font-weight: 100;
+}
+
+.descripcionProductos p
+{
+    color: var(--colorTexto);
+    font-style: italic;
+    text-align: justify;
+    display: flex;
+    padding-right: 80px;
+}
+
+.imagenProductos
+{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.imagenProductos img
+{
+    width: 100%;
+    transform: scale(1.1);
+    transition: all 0.3s;
+}
+
+.contenedorProductos:hover .imagenProductos img
+{
+    transform: scale(1.15);
+}
+
+
+
+
+/*SECCION DE SERVICIOS*/
+#servicios
+{
+    height: 100vh;
+    background: white;
+    padding: 40px;
+}
+
+.titulosServicios
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.serviciosContenedor
+{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 30px;
+    grid-template-areas: "Ingredientes      imagenCentral      Rapidez"
+                                        "Calidad            imagenCentral      Domicilios";
+}
+
+.Calidad
+{
+    grid-row: Calidad;
+    grid-column: Calidad;
+}
+
+.Ingredientes
+{
+    grid-row: Ingredientes;
+    grid-column: Ingredientes;
+}
+
+.Rapides
+{
+    grid-row: Rapidez;
+    grid-column: Rapidez;
+}
+
+.Domicilios
+{
+    grid-row: Domicilios;
+    grid-column: Domicilios;
+}
+
+.imagenCentral
+{
+    grid-row: imagenCentral;
+    grid-column: imagenCentral;
+
+    transition: all 0.5s;
+}
+
+.imagenCentral:hover
+{
+    transform: scale(1.1);
+}
+
+.items
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.items span
+{
+    width: 95px;
+    font-size: 40px;
+    color: var(--colorSecundario);
+    padding: 20px;
+    border: 5px double #DEDEDE;
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+
+.items span:hover
+{
+    background: var(--colorSecundario);
+    color: white;
+}
+
+.Ingredientes span,
+.Calidad span
+{
+    color: var(--colorPrimario);
+}
+
+.Ingredientes span:hover,
+.Calidad span:hover
+{
+    background: var(--colorPrimario);
+    color: white;
+}
+
+.items .tituloItems
+{
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.items .textoItems
+{
+    font-size: 14px;
+    color: var(--colorTexto);
+    text-align: center;
+    font-style: italic;
+    padding: 0 20px;
+}
+
+
+
+
+/*SECCION EQUIPO DE TRABAJO*/
+#equipo
+{
+    display: flex;
+    height: 100vh;
+}
+
+.persona
+{
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.5s;
+}
+
+.persona:hover
+{
+    flex-grow: 3;
+}
+
+.imagenPersona
+{
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: grayscale(80%);
+}
+
+.imagenPersona:hover
+{
+    filter: grayscale(0%);
+}
+
+.informacionPersona
+{
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    transition: all 0.1s;
+    opacity: 0;
+}
+
+.persona:hover .informacionPersona
+{
+    opacity: 1;
+    bottom: 60px;
+    transition-delay: 0.3s;
+}
+
+.informacionPersona h2
+{
+    font-size: 30px;
+    color: black;
+    font-weight: 600;
+    text-shadow: 2px 2px  3px rgba(0, 0, 0, 0.5);
+}
+
+.informacionPersona p
+{
+    color: var(--colorSecundario);
+    font-size: 20px;
+    font-weight: 700;
+    font-style: italic;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px  3px rgba(255, 0, 0, 0.5);
+}
+
+.socialMedia a
+{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    color: white;
+    background: var(--colorSecundario);
+    line-height: 40px;
+    border-radius: 50%;
+    margin: 0 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.socialMedia a:hover
+{
+    color: var(--colorSecundario);
+    background: transparent;
+    transform: scale(2);
+}
+
+
+
+
+/*SECCION INGREDIENTES*/
+#ingredientes
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ingre
+{
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+    height: 250px;
+}
+
+.imagenIngre
+{
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.infoIngredientes
+{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s;
+}
+
+.infoIngredientes:hover
+{
+    background: rgba(0, 0, 0, 0.10);
+}
+
+.infoIngredientes p
+{
+    font-size: 28px;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.infoIngredientes:hover p
+{
+    transform: translateY(10px);
+}
+
+
+
+
+/*SECCION DE CONTACTO*/
+#contacto
+{
+    height: 100vh;
+    padding: 60px;
+    position: relative;
+    margin-bottom: -100px;
+}
+
+#formulario
+{
+    width: 70%;
+    margin: 50px auto;
+}
+
+.dosCampos
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputText, .inputEmail, .textArea
+{
+    border: 1px solid #b4b4b4;
+    color: #888;
+    background: white;
+    outline: none;
+    padding: 15px 60px;
+    height: 45px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: all 0.5s;
+}
+
+.textArea
+{
+    width: 100%;
+    height: 150px;
+    resize: none;
+}
+
+.inputText, .inputEmail
+{
+    width: 100%;
+}
+
+.inputConIcon
+{
+    position: relative;
+    width: 48%;
+}
+
+.inputConIcon i
+{
+    position: absolute;
+    left: 0;
+    padding: 14px 15px;
+    background: #888;
+    color: white;
+    transition: all 0.5s;
+}
+
+.textAreaIcon
+{
+    width: 100%;
+}
+
+.textAreaIcon i
+{
+    background: transparent;
+    color: #888;
+    padding: 0;
+    font-size: 25px;
+    left: 17px;
+    top: 13px;
+    transition: all 0.5s;
+}
+
+.inputConIcon input:focus,
+.inputConIcon textarea:focus
+{
+    border: 2px solid var(--colorPrimario);
+}
+
+.inputConIcon input:focus + i
+{
+    background: var(--colorPrimario);
+}
+
+.inputConIcon textarea:focus + i
+{
+    color: var(--colorPrimario);
+}
+
+.btnArchivos
+{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btnInput
+{
+    padding: 15px 50px;
+}
+
+.btnInput:hover
+{
+    padding: 15px 65px;
+}
+
+
+
+
+/*SECCION DE ALERTAS*/
+.alertas
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert
+{
+    width: 60%;
+    padding: 20px 60px;
+    position: fixed;
+    top: 0;
+    transition: all 0.5s;
+}
+
+.alert.show
+{
+    transform: translateY(50%);
+}
+
+.alert.ocultarAlertas
+{
+    transform: translateY(-100%);
+}
+
+.alert .iconoAlerta
+{
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+}
+
+.alert .mensaje
+{
+    padding: 0 20px;
+    font-size: 18px;
+}
+
+#alertaError
+{
+    background: #f8d7da;
+    border-right: 4px solid #da3748;
+}
+
+#alertaError .iconoAlerta
+{
+    color: #da3748;
+}
+
+#alertaError .mensaje
+{
+    color: #721c24;
+}
+
+#alertaExito
+{
+    background: #d4edda;
+    border-right: 4px solid #279e43;
+}
+
+#alertaExito .iconoAlerta
+{
+    color: #279e43;
+}
+
+#alertaExito .mensaje
+{
+    color: #155724;
+}
+
+
+
+
+/*SECCION FOOTER*/
+footer
+{
+    display: flex;
+}
+
+.socialesMetodo
+{
+    width: 25%;
+    height: 100px;
+    background: #333;
+    color: white;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.socialesMetodo i
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+    line-height: 100px;
+    transition: all 0.5s;
+}
+
+.socialesMetodo span
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    padding: 10px 0;
+    font-size: 12px;
+    background: var(--colorPrimario);
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 700;
+    transform: translateY(60px);
+    transition: all 0.5s;
+}
+
+.socialesMetodo i:hover + span
+{
+    transform: translateY(0px);
+}
+
+.socialesMetodo i:hover
+{
+    transform: translateY(-20px);
+}
+
+
+
+
+/*BOTON PARA IR HACIA ARRIBA*/
+#btnTopPage
+{
+    width: 50px;
+    height: 50px;
+    background: var(--colorPrimario);
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+    transform: translateY(200%);
+    transition: all 0.5s;
+}
+
+#btnTopPage.show
+{
+    transform: translateY(0);
+}
+
+#btnTopPage.scrollFinal
+{
+    transform: translateY(-250%);
+}
+
+#btnTopPage span
+{
+    color: white;
+    font-size: 25px;
+    width: 100%;
+    text-align: center;
+    line-height: 50px;
+    transition: all 0.5s;
+}
+
+#btnTopPage:hover
+{
+    background: #d89127
+}
+
+#btnTopPage:hover span
+{
+    transform: translateY(-5px);
+}
+
+
+
+
+
+
+                                                                                                            /*RESPONSIVE DESIGN -- MEDIA QUERYS*/
+
+/*RESPONSIVE DESIGN -- SLIDER PRODUCTOS*/
+@media screen and (max-width: 960px)
+{
+    .contenedorProductos
+    {
+        flex-direction: column;
+    }
+
+    .descripcionProductos
+    {
+        width: 70%;
+        order: 1;
+    }
+
+    .descripcionProductos, .imagenProductos
+    {
+        padding-top: 50px;
+    }
+
+    .descripcionProductos .btn
+    {
+        padding: 10px 20px;
+    }
+
+/*SECCION SERVICIOS*/
+    .serviciosContenedor
+    {
+        margin-top: 50px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "Ingredientes      Rapidez"
+                                            "Calidad            Domicilios";
+    }
+
+    .imagenCentral
+    {
+        display: none;
+    }
+}
+
+
+
+
+/*RESPONSIVE DESIGN -- MENU PRINCIPAL*/
+@media screen and (max-width: 500px)
+{
+    .menuPrincipal
+    {
+        position: fixed;
+        top: 0;
+        margin-top: 0;
+    }
+
+    .menuPrincipal i
+    {
+        display: block;
+    }
+
+    .menuPrincipal .logo
+    {
+        padding-top: 20px;
+    }
+
+    .barraMenu
+    {
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 1000;
+        background: #333;
+        transition: all 1s;
+        transform: translateX(100%);
+    }
+
+    .barraMenu.active
+    {
+        transform: translateX(0%);
+    }
+
+    .barraMenu i
+    {
+        position: absolute;
+        right: 50px;
+        top: 50px;
+    }
+
+    .barraMenu .enlaces ul li
+    {
+        display: block;
+        padding: 20px 10px;
+        text-align: center;
+    }
+
+    .barraMenu .enlaces ul li a,
+    .barraMenu .redesSociales a
+    {
+        font-size: 25px;
+    }
+
+/*SLIDER PRODUCTOS*/
+    .slider
+    {
+        height: calc(100vh - 0px);
+    }
+
+    .imagenProductos
+    {
+        width: 65%;
+    }
+
+    .descripcionProductos h1
+    {
+        font-size: 7vw;
+    }
+
+    .descripcionProductos h2
+    {
+        font-size: 3vw;
+    }
+
+    .infoIngredientes p
+    {
+    font-size: 23px;
+    }
+
+/*SECCION DE CONTACTO*/
+    #formulario
+    {
+        width: 100%;
+    }
+
+    .dosCampos
+    {
+        flex-direction: column;
+    }
+
+    .inputConIcon
+    {
+        width: 100%;
+    }
+
+/*SECCION DE ALERTAS*/
+    .alert
+    {
+        width: 100%;
+    }
+
+    .alert.show
+    {
+        transform: translateY(190%);
+    }
+
+/*FOOTER*/
+    footer
+    {
+        flex-wrap: wrap;
+        margin-top: -100px;
+    }
+
+    .socialesMetodo
+    {
+        width: 50%;
+    }
+
+    /*BOTON PARA IR HACIA ARRIBA*/
+    #btnTopPage
+    {
+        display: none;
+    }
+}
